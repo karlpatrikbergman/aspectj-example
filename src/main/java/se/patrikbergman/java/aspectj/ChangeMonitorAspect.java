@@ -1,5 +1,6 @@
 package se.patrikbergman.java.aspectj;
 
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.DeclareMixin;
 
@@ -30,6 +31,9 @@ public class ChangeMonitorAspect {
 		};
 	}
 
-	
+	@After("execution (void se.patrikbergman.java.aspectj.Band.play()) && this(band)")
+	public void setDirtyFlag(Band band) {
+		((Monitorable) band).setDirty();
+	}
 
 }

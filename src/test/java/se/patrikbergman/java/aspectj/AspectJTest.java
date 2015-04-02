@@ -8,5 +8,6 @@ public class AspectJTest {
 	public void doingSomething() {
 		Band band = new Band("Accept");
 		band.play();
+		System.out.println(((ChangeMonitorAspect.Monitorable)band).testAndReset());
 	}
 }
