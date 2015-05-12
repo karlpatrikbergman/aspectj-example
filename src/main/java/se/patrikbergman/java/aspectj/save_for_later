@@ -4,7 +4,7 @@ Some example code:
 public class LoggingAspect {
 
 	// This point cut picks out all Band's public methods
-	@Pointcut("call(* se.patrikbergman.java.aspectj.Band.*(..)) && target(callee)")
+	@Pointcut("call(* se.patrikbergman.java.aspectj.logging.Band.*(..)) && target(callee)")
 	void bandPublicMethods(Band callee) {
 	}
 

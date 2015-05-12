@@ -1,6 +1,6 @@
-package se.patrikbergman.java.aspectj;
+package se.patrikbergman.java.aspectj.logging;
 
-public class Band {
+class Band {
 
 	private final String name;
 
@@ -13,6 +13,6 @@ public class Band {
 	}
 
 	public void play() {
-		System.out.println("Band is playing");
+		System.out.printf("Band %s is playing", name);
 	}
 }

@@ -1,4 +1,4 @@
-package se.patrikbergman.java.aspectj;
+package se.patrikbergman.java.aspectj.mixin;
 
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
@@ -12,7 +12,7 @@ public class ChangeMonitorAspect {
 		public boolean testAndReset();
 	}
 
-	@DeclareMixin("se.patrikbergman.java.aspectj.Band")
+	@DeclareMixin("se.patrikbergman.java.aspectj.mixin.Band")
 	public static Monitorable createMonitorable() {
 		return new Monitorable() {
 			private boolean dirty = false;
@@ -31,7 +31,7 @@ public class ChangeMonitorAspect {
 		};
 	}
 
-	@After("execution (void se.patrikbergman.java.aspectj.Band.play()) && this(band)")
+	@After("execution (void se.patrikbergman.java.aspectj.logging.Band.play()) && this(band)")
 	public void setDirtyFlag(Band band) {
 		((Monitorable) band).setDirty();
 	}
