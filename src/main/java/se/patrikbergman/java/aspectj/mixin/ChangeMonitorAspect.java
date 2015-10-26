@@ -8,8 +8,8 @@ import org.aspectj.lang.annotation.DeclareMixin;
 public class ChangeMonitorAspect {
 
 	public interface Monitorable {
-		public void setDirty();
-		public boolean testAndReset();
+		void setDirty();
+		boolean testAndReset();
 	}
 
 	@DeclareMixin("se.patrikbergman.java.aspectj.mixin.Band")
